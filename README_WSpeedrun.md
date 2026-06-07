@@ -1,7 +1,7 @@
-# WSpeedrun Service
+# Speedrunner Service
 
 ## Overview
-WSpeedrun adalah backend berbasis NestJS yang menggunakan arsitektur microservice untuk mengelola platform speedrun game.
+Speedrunner adalah backend berbasis NestJS yang menggunakan arsitektur microservice untuk mengelola platform speedrun game.
 
 Project terdiri dari beberapa service:
 
