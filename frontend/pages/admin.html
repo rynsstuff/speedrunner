@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WSpeedrun — Admin</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">WSPEEDRUN</a>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="game-detail.html">Games</a></li>
+      <li><a href="admin.html" class="active">Admin</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <span class="chip chip-live" style="margin-right:4px;"><span class="dot"></span>Admin</span>
+      <span class="mono text-muted" style="font-size:13px;">Moderator</span>
+      <a href="login.html" class="btn btn-ghost btn-sm">Log Out</a>
+    </div>
+  </nav>
+
+  <div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <nav class="admin-nav">
+        <button class="admin-nav-btn active" data-tab="tab-runs">Pending Runs</button>
+        <button class="admin-nav-btn" data-tab="tab-games">Manage Games</button>
+        <button class="admin-nav-btn" data-tab="tab-categories">Categories</button>
+        <button class="admin-nav-btn" data-tab="tab-users">Users</button>
+      </nav>
+      <div class="admin-sidebar-stats">
+        <div class="sidebar-stat"><span class="mono" style="font-size:20px;font-weight:700;color:var(--crimson);">7</span><span class="label">Pending</span></div>
+        <div class="sidebar-stat"><span class="mono" style="font-size:20px;font-weight:700;">143</span><span class="label">Games</span></div>
+        <div class="sidebar-stat"><span class="mono" style="font-size:20px;font-weight:700;">912</span><span class="label">Users</span></div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+
+      <!-- Pending Runs -->
+      <div class="admin-pane active" id="tab-runs">
+        <div class="admin-pane-header">
+          <h1 class="page-title" style="border:none;padding:0;margin:0;">Pending Runs</h1>
+          <span class="chip chip-live" style="font-size:13px;"><span class="dot"></span>7 awaiting review</span>
+        </div>
+
+        <div class="runs-queue" id="runs-queue">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Manage Games -->
+      <div class="admin-pane" id="tab-games">
+        <div class="admin-pane-header">
+          <h1 class="page-title" style="border:none;padding:0;margin:0;">Manage Games</h1>
+          <button class="btn btn-primary btn-sm" onclick="openGameModal()">+ Add Game</button>
+        </div>
+
+        <div class="card" style="overflow:hidden; margin-top:24px;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Game</th>
+                <th>Categories</th>
+                <th>Total Runs</th>
+                <th>Added</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">Minecraft</td>
+                <td class="text-muted">4</td>
+                <td class="text-muted">312</td>
+                <td class="text-muted">2026-01-15</td>
+                <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="mono">Super Mario 64</td>
+                <td class="text-muted">6</td>
+                <td class="text-muted">508</td>
+                <td class="text-muted">2026-01-15</td>
+                <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="mono">Ocarina of Time</td>
+                <td class="text-muted">5</td>
+                <td class="text-muted">427</td>
+                <td class="text-muted">2026-02-03</td>
+                <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="mono">Celeste</td>
+                <td class="text-muted">3</td>
+                <td class="text-muted">291</td>
+                <td class="text-muted">2026-02-20</td>
+                <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="mono">Half-Life</td>
+                <td class="text-muted">2</td>
+                <td class="text-muted">175</td>
+                <td class="text-muted">2026-03-11</td>
+                <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="admin-pane" id="tab-categories">
+        <div class="admin-pane-header">
+          <h1 class="page-title" style="border:none;padding:0;margin:0;">Categories</h1>
+          <button class="btn btn-primary btn-sm">+ Add Category</button>
+        </div>
+        <div class="admin-filter mt-24">
+          <select class="input" style="width:200px;" id="cat-game-filter">
+            <option value="">All Games</option>
+            <option>Minecraft</option>
+            <option>Super Mario 64</option>
+            <option>Ocarina of Time</option>
+            <option>Celeste</option>
+          </select>
+        </div>
+        <div class="card" style="overflow:hidden; margin-top:16px;">
+          <table class="data-table">
+            <thead>
+              <tr><th>Category</th><th>Game</th><th>Runs</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="mono">Any%</td><td class="text-muted">Minecraft</td><td class="text-muted">87</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+              <tr><td class="mono">All Advancements</td><td class="text-muted">Minecraft</td><td class="text-muted">56</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+              <tr><td class="mono">Any%</td><td class="text-muted">Super Mario 64</td><td class="text-muted">110</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+              <tr><td class="mono">70 Star</td><td class="text-muted">Super Mario 64</td><td class="text-muted">95</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+              <tr><td class="mono">Any%</td><td class="text-muted">Ocarina of Time</td><td class="text-muted">134</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Users -->
+      <div class="admin-pane" id="tab-users">
+        <div class="admin-pane-header">
+          <h1 class="page-title" style="border:none;padding:0;margin:0;">Users</h1>
+        </div>
+        <div class="admin-filter mt-24">
+          <input class="input" style="max-width:280px;" type="search" placeholder="Search username or email…" id="user-search" />
+        </div>
+        <div class="card" style="overflow:hidden; margin-top:16px;">
+          <table class="data-table">
+            <thead>
+              <tr><th>Username</th><th>Email</th><th>Country</th><th>Role</th><th>Runs</th></tr>
+            </thead>
+            <tbody id="users-table">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Add Game Modal -->
+  <div class="modal-backdrop" id="game-modal" style="display:none;">
+    <div class="modal card">
+      <div class="modal-header">
+        <h2 class="section-title">Add New Game</h2>
+        <button class="btn btn-ghost btn-sm" onclick="closeGameModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="new-game-name">Game Name</label>
+          <input class="input" type="text" id="new-game-name" placeholder="e.g. Portal 2" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="new-game-desc">Description</label>
+          <textarea class="input" id="new-game-desc" rows="3" placeholder="Brief description…"></textarea>
+        </div>
+        <div style="display:flex;gap:12px;justify-content:flex-end;margin-top:20px;">
+          <button class="btn btn-ghost" onclick="closeGameModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="saveGame()">Add Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

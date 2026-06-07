@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WSpeedrun — Submit Run</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/submit-run.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">WSPEEDRUN</a>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="game-detail.html">Games</a></li>
+      <li><a href="submit-run.html" class="active">Submit Run</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <!-- Simulating logged-in state -->
+      <span class="mono text-muted" style="font-size:13px;">GlitchHuntr</span>
+      <button class="btn btn-ghost btn-sm">Log Out</button>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-bottom:60px;">
+    <div class="page-header">
+      <h1 class="page-title">Submit Run</h1>
+      <p class="page-subtitle">All runs are reviewed by moderators before appearing on the leaderboard.</p>
+    </div>
+
+    <div class="submit-layout">
+
+      <!-- Form -->
+      <form class="submit-form" id="submit-form" novalidate>
+
+        <div class="form-section">
+          <h2 class="form-section-title">Run Details</h2>
+
+          <div class="form-group">
+            <label class="form-label" for="game-select">Game</label>
+            <select class="input" id="game-select">
+              <option value="">— Select a game —</option>
+              <option value="minecraft">Minecraft</option>
+              <option value="sm64">Super Mario 64</option>
+              <option value="oot">Ocarina of Time</option>
+              <option value="celeste">Celeste</option>
+              <option value="hl">Half-Life</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="category-select">Category</label>
+            <select class="input" id="category-select" disabled>
+              <option value="">— Select game first —</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="platform-select">Platform</label>
+            <select class="input" id="platform-select">
+              <option value="">— Select platform —</option>
+              <option>Java Edition</option>
+              <option>Bedrock Edition</option>
+              <option>Nintendo 64</option>
+              <option>PC</option>
+              <option>Emulator</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2 class="form-section-title">Time</h2>
+
+          <div class="time-inputs">
+            <div class="time-field">
+              <input class="input time-input" type="number" id="t-hours" min="0" max="99" placeholder="00" />
+              <label class="label" for="t-hours">Hours</label>
+            </div>
+            <span class="time-sep mono">:</span>
+            <div class="time-field">
+              <input class="input time-input" type="number" id="t-mins" min="0" max="59" placeholder="00" />
+              <label class="label" for="t-mins">Minutes</label>
+            </div>
+            <span class="time-sep mono">:</span>
+            <div class="time-field">
+              <input class="input time-input" type="number" id="t-secs" min="0" max="59" placeholder="00" />
+              <label class="label" for="t-secs">Seconds</label>
+            </div>
+            <span class="time-sep mono">.</span>
+            <div class="time-field">
+              <input class="input time-input" type="number" id="t-ms" min="0" max="999" placeholder="000" />
+              <label class="label" for="t-ms">Ms</label>
+            </div>
+          </div>
+
+          <div class="time-preview" id="time-preview">
+            <span class="label">Formatted Time</span>
+            <span class="mono time-preview-val" id="preview-val">--:--.-</span>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2 class="form-section-title">Proof</h2>
+
+          <div class="form-group">
+            <label class="form-label" for="vod-url">Video URL <span class="text-faint">(YouTube / Twitch)</span></label>
+            <input class="input" type="url" id="vod-url" placeholder="https://youtube.com/watch?v=..." />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="notes">Notes <span class="text-faint">(optional)</span></label>
+            <textarea class="input" id="notes" rows="3" placeholder="Describe your run, glitches used, etc."></textarea>
+          </div>
+        </div>
+
+        <!-- Error message -->
+        <div class="form-error" id="form-error" style="display:none;"></div>
+
+        <div class="form-actions">
+          <a href="game-detail.html" class="btn btn-ghost">Cancel</a>
+          <button type="submit" class="btn btn-primary" id="submit-btn">Submit Run</button>
+        </div>
+
+      </form>
+
+      <!-- Info Sidebar -->
+      <aside class="submit-sidebar">
+        <div class="card sidebar-card">
+          <h3 class="sidebar-title">Submission Rules</h3>
+          <ul class="rules-list">
+            <li>Video must show the entire run from start to finish.</li>
+            <li>In-game timer or a reliable external timer must be visible.</li>
+            <li>Runs are reviewed within 72 hours.</li>
+            <li>Cheating or spliced video will result in a permanent ban.</li>
+            <li>Emulator runs are allowed but marked separately.</li>
+          </ul>
+        </div>
+        <div class="card sidebar-card">
+          <h3 class="sidebar-title">Your Recent Runs</h3>
+          <div class="recent-submissions">
+            <div class="sub-row">
+              <div>
+                <span class="mono" style="font-size:13px;">Minecraft Any%</span>
+                <span class="label" style="display:block;margin-top:2px;">2026-05-20</span>
+              </div>
+              <span class="chip chip-verified">Verified</span>
+            </div>
+            <div class="sub-row">
+              <div>
+                <span class="mono" style="font-size:13px;">Celeste Any%</span>
+                <span class="label" style="display:block;margin-top:2px;">2026-05-14</span>
+              </div>
+              <span class="chip chip-pending">Pending</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-banner" id="success-banner" style="display:none;">
+      <span class="mono">✓ Run submitted successfully!</span>
+      <span class="text-muted" style="font-size:14px;">Your run is pending review and will appear on the leaderboard once verified.</span>
+    </div>
+
+  </main>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/submit-run.js"></script>
+</body>
+</html>

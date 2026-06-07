@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WSpeedrun — Minecraft</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/game-detail.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">WSPEEDRUN</a>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="game-detail.html" class="active">Games</a></li>
+      <li><a href="submit-run.html">Submit Run</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="login.html" class="btn btn-ghost btn-sm">Sign In</a>
+      <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-bottom:60px;">
+
+    <!-- Game Header -->
+    <div class="game-header">
+      <div class="game-hero-icon">MC</div>
+      <div class="game-hero-info">
+        <p class="label">Game</p>
+        <h1 class="page-title" style="border:none;margin:4px 0 8px;">Minecraft</h1>
+        <p class="text-muted" style="font-size:15px; max-width:520px;">
+          Sandbox survival game. Speedruns involve completing objectives as fast as possible, from defeating the Ender Dragon to collecting all achievements.
+        </p>
+        <div class="game-meta">
+          <span class="label">4 Categories</span>
+          <span class="label">·</span>
+          <span class="label">312 Runs</span>
+          <span class="label">·</span>
+          <span class="label">89 Runners</span>
+        </div>
+      </div>
+      <a href="submit-run.html" class="btn btn-primary" style="align-self:flex-start; margin-top:16px;">Submit Run</a>
+    </div>
+
+    <!-- Category Tabs -->
+    <div data-tabs>
+      <div class="tabs" id="category-tabs">
+        <button class="tab-btn active" data-tab="any-pct">Any%</button>
+        <button class="tab-btn" data-tab="all-adv">All Advancements</button>
+        <button class="tab-btn" data-tab="set-seed">Set Seed</button>
+        <button class="tab-btn" data-tab="random-seed">Random Seed</button>
+      </div>
+
+      <!-- Any% -->
+      <div class="tab-pane active" id="any-pct">
+        <div class="leaderboard-header">
+          <div>
+            <h2 class="section-title" style="margin-bottom:4px;">Any% Leaderboard</h2>
+            <p class="text-faint" style="font-size:13px;">Defeat the Ender Dragon as fast as possible. No restrictions.</p>
+          </div>
+          <div class="lb-filters">
+            <select class="input" style="width:140px;" id="platform-filter">
+              <option>All Platforms</option>
+              <option>Java Edition</option>
+              <option>Bedrock</option>
+            </select>
+          </div>
+        </div>
+        <div class="card" style="overflow:hidden;">
+          <table class="data-table" id="leaderboard-table">
+            <thead>
+              <tr>
+                <th style="width:48px;">#</th>
+                <th>Runner</th>
+                <th>Time</th>
+                <th>Platform</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="lb-body">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- All Advancements -->
+      <div class="tab-pane" id="all-adv">
+        <div class="leaderboard-header">
+          <div>
+            <h2 class="section-title" style="margin-bottom:4px;">All Advancements Leaderboard</h2>
+            <p class="text-faint" style="font-size:13px;">Complete all in-game advancements.</p>
+          </div>
+        </div>
+        <div class="card" style="overflow:hidden;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width:48px;">#</th>
+                <th>Runner</th>
+                <th>Time</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="wr-row">
+                <td class="rank-1 mono">#1</td>
+                <td class="mono">GlitchHuntr</td>
+                <td class="mono text-lime">01:12.44</td>
+                <td class="text-muted">2026-05-12</td>
+                <td><span class="chip chip-verified">Verified</span></td>
+              </tr>
+              <tr>
+                <td class="rank-2 mono">#2</td>
+                <td class="mono">VelocityX</td>
+                <td class="mono">01:19.07</td>
+                <td class="text-muted">2026-04-28</td>
+                <td><span class="chip chip-verified">Verified</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Set Seed -->
+      <div class="tab-pane" id="set-seed">
+        <p class="text-muted" style="padding: 32px 0;">No runs submitted yet for this category.</p>
+      </div>
+
+      <!-- Random Seed -->
+      <div class="tab-pane" id="random-seed">
+        <p class="text-muted" style="padding: 32px 0;">No runs submitted yet for this category.</p>
+      </div>
+
+    </div><!-- /data-tabs -->
+
+    <!-- Run Detail Modal -->
+    <div class="modal-backdrop" id="run-modal" style="display:none;">
+      <div class="modal card">
+        <div class="modal-header">
+          <h2 class="section-title">Run Details</h2>
+          <button class="btn btn-ghost btn-sm" onclick="closeModal()">✕ Close</button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/game-detail.js"></script>
+</body>
+</html>

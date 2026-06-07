@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WSpeedrun — Home</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/home.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">WSPEEDRUN</a>
+    <ul class="navbar-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="game-detail.html">Games</a></li>
+      <li><a href="submit-run.html">Submit Run</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="login.html" class="btn btn-ghost btn-sm">Sign In</a>
+      <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <p class="label">Platform</p>
+      <h1 class="hero-title">Track Every<br/><span class="text-cyan">Millisecond.</span></h1>
+      <p class="hero-sub">Submit speedruns, climb leaderboards, and compete across hundreds of games.</p>
+      <div class="hero-actions">
+        <a href="login.html" class="btn btn-primary">Get Started</a>
+        <a href="game-detail.html" class="btn btn-ghost">Browse Games</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-value mono">2,847</span>
+          <span class="label">Total Runs</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value mono">143</span>
+          <span class="label">Games</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value mono">912</span>
+          <span class="label">Runners</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value mono text-crimson">3 <span class="chip chip-live"><span class="dot"></span>Live</span></span>
+          <span class="label">Active Now</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container" style="padding-top: 40px; padding-bottom: 60px;">
+    <div class="home-grid">
+
+      <!-- Games List -->
+      <section>
+        <div class="section-header">
+          <h2 class="section-title">Games</h2>
+          <a href="game-detail.html" class="label text-cyan" style="text-decoration:none;">View All →</a>
+        </div>
+        <div class="game-list">
+          <a href="game-detail.html" class="game-card card">
+            <div class="game-icon">MC</div>
+            <div class="game-info">
+              <span class="game-name">Minecraft</span>
+              <span class="label">4 categories · 312 runs</span>
+            </div>
+            <span class="game-wr mono">00:07.48</span>
+          </a>
+          <a href="game-detail.html" class="game-card card">
+            <div class="game-icon" style="background:rgba(255,0,60,0.12);color:var(--crimson);">SM</div>
+            <div class="game-info">
+              <span class="game-name">Super Mario 64</span>
+              <span class="label">6 categories · 508 runs</span>
+            </div>
+            <span class="game-wr mono">00:06.41</span>
+          </a>
+          <a href="game-detail.html" class="game-card card">
+            <div class="game-icon" style="background:rgba(204,255,0,0.1);color:var(--lime);">OT</div>
+            <div class="game-info">
+              <span class="game-name">Ocarina of Time</span>
+              <span class="label">5 categories · 427 runs</span>
+            </div>
+            <span class="game-wr mono">00:17.53</span>
+          </a>
+          <a href="game-detail.html" class="game-card card">
+            <div class="game-icon" style="background:rgba(0,240,255,0.08);color:var(--cyan);">CE</div>
+            <div class="game-info">
+              <span class="game-name">Celeste</span>
+              <span class="label">3 categories · 291 runs</span>
+            </div>
+            <span class="game-wr mono">00:27.01</span>
+          </a>
+          <a href="game-detail.html" class="game-card card">
+            <div class="game-icon" style="background:rgba(176,176,255,0.1);color:#b9b9ff;">HL</div>
+            <div class="game-info">
+              <span class="game-name">Half-Life</span>
+              <span class="label">2 categories · 175 runs</span>
+            </div>
+            <span class="game-wr mono">00:16.22</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Global Leaderboard -->
+      <section>
+        <div class="section-header">
+          <h2 class="section-title">Global Leaderboard</h2>
+          <span class="label">Top Runners</span>
+        </div>
+        <div class="card" style="overflow:hidden;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Runner</th>
+                <th>Game</th>
+                <th class="text-right">Best Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="wr-row">
+                <td class="rank-1 mono">#1</td>
+                <td><span class="mono">IllumiaX</span></td>
+                <td class="text-muted">OoT Any%</td>
+                <td class="text-right mono text-lime">00:17.53</td>
+              </tr>
+              <tr>
+                <td class="rank-2 mono">#2</td>
+                <td><span class="mono">NightCore99</span></td>
+                <td class="text-muted">SM64 70-Star</td>
+                <td class="text-right mono">00:47.21</td>
+              </tr>
+              <tr>
+                <td class="rank-3 mono">#3</td>
+                <td><span class="mono">VelocityX</span></td>
+                <td class="text-muted">Celeste Any%</td>
+                <td class="text-right mono">00:27.01</td>
+              </tr>
+              <tr>
+                <td class="mono text-faint">#4</td>
+                <td><span class="mono">GlitchHuntr</span></td>
+                <td class="text-muted">Minecraft AA</td>
+                <td class="text-right mono">01:12.44</td>
+              </tr>
+              <tr>
+                <td class="mono text-faint">#5</td>
+                <td><span class="mono">SpeedDemon</span></td>
+                <td class="text-muted">Half-Life</td>
+                <td class="text-right mono">00:16.22</td>
+              </tr>
+              <tr>
+                <td class="mono text-faint">#6</td>
+                <td><span class="mono">FramePerfect</span></td>
+                <td class="text-muted">SM64 Any%</td>
+                <td class="text-right mono">00:06.41</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Recent Runs -->
+        <div class="section-header mt-32">
+          <h2 class="section-title">Recent Runs</h2>
+        </div>
+        <div class="recent-runs">
+          <div class="recent-run card">
+            <div>
+              <span class="mono" style="font-size:14px;">GlitchHuntr</span>
+              <span class="text-faint" style="font-size:13px; margin-left:8px;">Minecraft Any%</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span class="mono text-cyan" style="font-size:14px;">00:07.48</span>
+              <span class="chip chip-verified">Verified</span>
+            </div>
+          </div>
+          <div class="recent-run card">
+            <div>
+              <span class="mono" style="font-size:14px;">NightCore99</span>
+              <span class="text-faint" style="font-size:13px; margin-left:8px;">SM64 Any%</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span class="mono" style="font-size:14px;">00:06.55</span>
+              <span class="chip chip-pending">Pending</span>
+            </div>
+          </div>
+          <div class="recent-run card">
+            <div>
+              <span class="mono" style="font-size:14px;">IllumiaX</span>
+              <span class="text-faint" style="font-size:13px; margin-left:8px;">OoT Any%</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span class="mono text-lime" style="font-size:14px;">00:17.53</span>
+              <span class="chip chip-verified">WR</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/home.js"></script>
+</body>
+</html>

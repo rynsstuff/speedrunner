@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WSpeedrun — Sign In</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+</head>
+<body>
+
+  <div class="auth-layout">
+
+    <!-- Left Panel -->
+    <div class="auth-panel">
+      <a class="navbar-brand" href="index.html" style="margin-bottom:auto;">WSPEEDRUN</a>
+
+      <div class="auth-card card">
+        <!-- Tabs -->
+        <div class="tabs" id="auth-tabs">
+          <button class="tab-btn active" data-tab="signin-pane">Sign In</button>
+          <button class="tab-btn" data-tab="register-pane">Create Account</button>
+        </div>
+
+        <!-- Sign In -->
+        <div class="tab-pane active" id="signin-pane">
+          <form id="signin-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="si-username">Username or Email</label>
+              <input class="input" type="text" id="si-username" placeholder="Enter your username" autocomplete="username" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="si-password">Password</label>
+              <input class="input" type="password" id="si-password" placeholder="••••••••" autocomplete="current-password" />
+            </div>
+            <div id="signin-error" class="form-error" style="display:none;"></div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
+              Sign In
+            </button>
+            <p class="auth-footer-link">
+              Don't have an account?
+              <button type="button" class="link-btn" onclick="switchToTab('register-pane')">Create one →</button>
+            </p>
+          </form>
+        </div>
+
+        <!-- Register -->
+        <div class="tab-pane" id="register-pane">
+          <form id="register-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="reg-username">Username</label>
+              <input class="input" type="text" id="reg-username" placeholder="Your speedrun alias" autocomplete="username" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Email</label>
+              <input class="input" type="email" id="reg-email" placeholder="email@example.com" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-country">Country</label>
+              <select class="input" id="reg-country">
+                <option value="">— Select country —</option>
+                <option>Indonesia</option>
+                <option>United States</option>
+                <option>Japan</option>
+                <option>Germany</option>
+                <option>Brazil</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-password">Password</label>
+              <input class="input" type="password" id="reg-password" placeholder="Minimum 8 characters" autocomplete="new-password" />
+              <div class="password-strength" id="pw-strength" style="display:none;">
+                <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
+                <span class="label" id="strength-label">Weak</span>
+              </div>
+            </div>
+            <div id="register-error" class="form-error" style="display:none;"></div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
+              Create Account
+            </button>
+            <p class="auth-footer-link">
+              Already have an account?
+              <button type="button" class="link-btn" onclick="switchToTab('signin-pane')">Sign in →</button>
+            </p>
+          </form>
+        </div>
+
+      </div><!-- /auth-card -->
+
+      <p class="auth-tagline label">Compete. Submit. Dominate.</p>
+    </div>
+
+    <!-- Right Panel (decorative) -->
+    <div class="auth-deco">
+      <div class="deco-content">
+        <p class="label" style="color:rgba(0,240,255,0.6); margin-bottom:16px;">World Record</p>
+        <div class="deco-wr">
+          <span class="deco-game mono">Ocarina of Time — Any%</span>
+          <span class="deco-time mono">00:17.53</span>
+        </div>
+        <p class="deco-runner mono">IllumiaX</p>
+        <div class="deco-stats">
+          <div><span class="mono" style="font-size:22px;font-weight:700;">143</span><br/><span class="label">Games</span></div>
+          <div><span class="mono" style="font-size:22px;font-weight:700;">2.8k</span><br/><span class="label">Runs</span></div>
+          <div><span class="mono" style="font-size:22px;font-weight:700;">912</span><br/><span class="label">Runners</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>
