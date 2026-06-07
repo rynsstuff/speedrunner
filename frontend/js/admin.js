@@ -11,11 +11,11 @@ const pendingRuns = [
 ];
 
 const users = [
-  { username: 'IllumiaX',   email: 'illumia@mail.com',  country: 'Japan',     role: 'user',  runs: 34 },
-  { username: 'NightCore99',email: 'nc99@mail.com',     country: 'USA',       role: 'user',  runs: 28 },
-  { username: 'GlitchHuntr',email: 'glitch@mail.com',  country: 'Germany',   role: 'user',  runs: 21 },
-  { username: 'VelocityX',  email: 'vel@mail.com',      country: 'Brazil',    role: 'user',  runs: 19 },
-  { username: 'Moderator',  email: 'mod@wspeedrun.com', country: 'Indonesia', role: 'admin', runs: 0 },
+  { username: 'IllumiaX',   email: 'illumia@mail.com',      country: 'Japan',     role: 'user',  runs: 34 },
+  { username: 'NightCore99',email: 'nc99@mail.com',         country: 'USA',       role: 'user',  runs: 28 },
+  { username: 'GlitchHuntr',email: 'glitch@mail.com',      country: 'Germany',   role: 'user',  runs: 21 },
+  { username: 'VelocityX',  email: 'vel@mail.com',          country: 'Brazil',    role: 'user',  runs: 19 },
+  { username: 'Moderator',  email: 'mod@speedrunner.com',   country: 'Indonesia', role: 'admin', runs: 0 },
 ];
 
 function renderPendingRuns(data) {
