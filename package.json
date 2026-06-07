@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@nestjs/config": "^4.0.4",
+    "@nestjs/swagger": "^11.4.4"
+  },
+  "scripts": {
+  "start:dev": "nest start --watch"
+}
+}

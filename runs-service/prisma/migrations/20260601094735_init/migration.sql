@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE `runs` MODIFY `user_id` VARCHAR(35) NULL,
+    MODIFY `submitted_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    MODIFY `verified_at` DATETIME(3) NULL;
