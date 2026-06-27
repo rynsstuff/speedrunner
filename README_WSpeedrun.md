@@ -175,7 +175,7 @@ Buat file `.env` pada masing-masing service dan sesuaikan konfigurasi database s
 Contoh:
 
 ```env
-DATABASE_URL="mysql://user:password@localhost:3306/speedrunner"
+DATABASE_URL="mysql://user:password@localhost:3306/wspeedrun"
 JWT_SECRET="your-secret-key"
 ```
 
